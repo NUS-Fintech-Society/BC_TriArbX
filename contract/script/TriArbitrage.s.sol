@@ -6,7 +6,7 @@ import "../lib/v3-periphery/contracts/interfaces/ISwapRouter.sol";
 import "../lib/v3-periphery/contracts/libraries/TransferHelper.sol";
 import "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
-contract TriArbitrage is Ownable {
+contract TriArbitrage is Ownable, Script {
     ISwapRouter public immutable swapRouter;
 
     // Swap router can be found here: https://docs.uniswap.org/contracts/v3/reference/deployments
@@ -42,7 +42,7 @@ contract TriArbitrage is Ownable {
         );
 
         // Approve the router to spend tokenA.
-        TransferHelper.safeApprovetokenADAI(address(swapRouter), amountIn);
+        TransferHelper.safeApprove(tokenA, address(swapRouter), amountIn);
         // tokenA => tokenB => tokenC => tokenA
         ISwapRouter.ExactInputParams memory params = ISwapRouter
             .ExactInputParams({
@@ -63,7 +63,10 @@ contract TriArbitrage is Ownable {
 
         // Executes the swap.
         amountOut = swapRouter.exactInput(params);
+
+        // Checks if swap is profitable
         require(amountOut >= amountIn, "Swap would have incurred losses");
+
         return amountOut;
     }
 }
