@@ -3,8 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { executeTriangularArbitrage, getPoolAddress, getToken, getTriangleRate, queryUniswap } from "../utils/uniswap";
-import { Pool } from "@uniswap/v3-sdk";
+import { getTriangleRate } from "../utils/uniswap";
 
 export default function Home() {
 	const poolImmutablesAbi = ["function factory() external view returns (address)", "function token0() external view returns (address)", "function token1() external view returns (address)", "function fee() external view returns (uint24)", "function tickSpacing() external view returns (int24)", "function maxLiquidityPerTick() external view returns (uint128)"];
