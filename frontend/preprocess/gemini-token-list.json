@@ -1,0 +1,693 @@
+{
+  "name": "Gemini Token List",
+  "version": {
+    "major": 0,
+    "minor": 2,
+    "patch": 0
+  },
+  "keywords": ["gemini", "tokens", "trusted"],
+  "logoURI": "https://gemini.com/static/images/loader.png",
+  "timestamp": "2022-06-22T14:15:22+0000",
+  "tokens": [
+    {
+      "name": "1Inch",
+      "chainId": 1,
+      "symbol": "1INCH",
+      "decimals": 18,
+      "address": "0x111111111117dc0aa78b770fa6a738034120c302",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/1inch.svg"
+    },
+    {
+      "name": "AaveToken",
+      "chainId": 1,
+      "symbol": "AAVE",
+      "decimals": 18,
+      "address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/aave.svg"
+    },
+    {
+      "name": "Amp",
+      "chainId": 1,
+      "symbol": "AMP",
+      "decimals": 18,
+      "address": "0xfF20817765cB7f73d4bde2e66e067E58D11095C2",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/amp.svg"
+    },
+    {
+      "name": "Balancer",
+      "chainId": 1,
+      "symbol": "BAL",
+      "decimals": 18,
+      "address": "0xba100000625a3754423978a60c9317c58a424e3D",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/bal.svg"
+    },
+    {
+      "name": "BasicAttentionToken",
+      "chainId": 1,
+      "symbol": "BAT",
+      "decimals": 18,
+      "address": "0x0D8775F648430679A709E98d2b0Cb6250d2887EF",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/bat.svg"
+    },
+    {
+      "name": "Bancor",
+      "chainId": 1,
+      "symbol": "BNT",
+      "decimals": 18,
+      "address": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/bnt.svg"
+    },
+    {
+      "name": "Compound",
+      "chainId": 1,
+      "symbol": "COMP",
+      "decimals": 18,
+      "address": "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/comp.svg"
+    },
+    {
+      "name": "CurveDAOToken",
+      "chainId": 1,
+      "symbol": "CRV",
+      "decimals": 18,
+      "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/crv.svg"
+    },
+    {
+      "name": "DaiStablecoin",
+      "chainId": 1,
+      "symbol": "DAI",
+      "decimals": 18,
+      "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/dai.svg"
+    },
+    {
+      "name": "Enjin",
+      "chainId": 1,
+      "symbol": "ENJ",
+      "decimals": 18,
+      "address": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/enj.svg"
+    },
+    {
+      "name": "The Graph",
+      "chainId": 1,
+      "symbol": "GRT",
+      "decimals": 18,
+      "address": "0xc944e90c64b2c07662a292be6244bdf05cda44a7",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/grt.svg"
+    },
+    {
+      "name": "GeminiDollar",
+      "chainId": 1,
+      "symbol": "GUSD",
+      "decimals": 2,
+      "address": "0x056fd409e1d7a124bd7017459dfea2f387b6d5cd",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/gusd.svg"
+    },
+    {
+      "name": "KyberNetwork",
+      "chainId": 1,
+      "symbol": "KNC",
+      "decimals": 18,
+      "address": "0xdd974D5C2e2928deA5F71b9825b8b646686BD200",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/knc.svg"
+    },
+    {
+      "name": "Chainlink",
+      "chainId": 1,
+      "symbol": "LINK",
+      "decimals": 18,
+      "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/link.svg"
+    },
+    {
+      "name": "Loopring",
+      "chainId": 1,
+      "symbol": "LRC",
+      "decimals": 18,
+      "address": "0xbbbbca6a901c926f240b89eacb641d8aec7aeafd",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/lrc.svg"
+    },
+    {
+      "name": "Decentraland",
+      "chainId": 1,
+      "symbol": "MANA",
+      "decimals": 18,
+      "address": "0x0F5D2fB29fb7d3CFeE444a200298f468908cC942",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/mana.svg"
+    },
+    {
+      "name": "Maker",
+      "chainId": 1,
+      "symbol": "MKR",
+      "decimals": 18,
+      "address": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/mkr.svg"
+    },
+    {
+      "name": "Orchid",
+      "chainId": 1,
+      "symbol": "OXT",
+      "decimals": 18,
+      "address": "0x4575f41308EC1483f3d399aa9a2826d74Da13Deb",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/oxt.svg"
+    },
+    {
+      "name": "PaxosGold",
+      "chainId": 1,
+      "symbol": "PAXG",
+      "decimals": 18,
+      "address": "0x45804880De22913dAFE09f4980848ECE6EcbAf78",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/paxg.svg"
+    },
+    {
+      "name": "Republic",
+      "chainId": 1,
+      "symbol": "REN",
+      "decimals": 18,
+      "address": "0x408e41876cCCDC0F92210600ef50372656052a38",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ren.svg"
+    },
+    {
+      "name": "Sandbox",
+      "chainId": 1,
+      "symbol": "SAND",
+      "decimals": 18,
+      "address": "0x3845badAde8e6dFF049820680d1F14bD3903a5d0",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/sand.svg"
+    },
+    {
+      "name": "Skale",
+      "chainId": 1,
+      "symbol": "SKL",
+      "decimals": 18,
+      "address": "0x00c83aecc790e8a4453e5dd3b0b4b3680501a7a7",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/skl.svg"
+    },
+    {
+      "name": "Synthetix",
+      "chainId": 1,
+      "symbol": "SNX",
+      "decimals": 18,
+      "address": "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/snx.svg"
+    },
+    {
+      "name": "Storj",
+      "chainId": 1,
+      "symbol": "STORJ",
+      "decimals": 8,
+      "address": "0xB64ef51C888972c908CFacf59B47C1AfBC0Ab8aC",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/storj.svg"
+    },
+    {
+      "name": "UMAVotingTokenv1",
+      "chainId": 1,
+      "symbol": "UMA",
+      "decimals": 18,
+      "address": "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/uma.svg"
+    },
+    {
+      "name": "Uniswap",
+      "chainId": 1,
+      "symbol": "UNI",
+      "decimals": 18,
+      "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/uni.svg"
+    },
+    {
+      "name": "yearn.finance",
+      "chainId": 1,
+      "symbol": "YFI",
+      "decimals": 18,
+      "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/yfi.svg"
+    },
+    {
+      "name": "0xProtocol",
+      "chainId": 1,
+      "symbol": "ZRX",
+      "decimals": 18,
+      "address": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/zrx.svg"
+    },
+    {
+      "name": "BarnBridge",
+      "chainId": 1,
+      "symbol": "BOND",
+      "decimals": 18,
+      "address": "0x0391D2021f89DC339F60Fff84546EA23E337750f",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/bond.svg"
+    },
+    {
+      "name": "Somnium Space",
+      "chainId": 1,
+      "symbol": "CUBE",
+      "decimals": 8,
+      "address": "0xDf801468a808a32656D2eD2D2d80B72A129739f4",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/cube.svg"
+    },
+    {
+      "name": "Injective",
+      "chainId": 1,
+      "symbol": "INJ",
+      "decimals": 18,
+      "address": "0xe28b3B32B6c345A34Ff64674606124Dd5Aceca30",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/inj.svg"
+    },
+    {
+      "name": "Livepeer",
+      "chainId": 1,
+      "symbol": "LPT",
+      "decimals": 18,
+      "address": "0x58b6A8A3302369DAEc383334672404Ee733aB239",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/lpt.svg"
+    },
+    {
+      "name": "Polygon",
+      "chainId": 1,
+      "symbol": "MATIC",
+      "decimals": 18,
+      "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/matic.svg"
+    },
+    {
+      "name": "Sushiswap",
+      "chainId": 1,
+      "symbol": "SUSHI",
+      "decimals": 18,
+      "address": "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/sushi.svg"
+    },
+    {
+      "name": "Ankr Network",
+      "chainId": 1,
+      "symbol": "ANKR",
+      "decimals": 18,
+      "address": "0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ankr.svg"
+    },
+    {
+      "name": "Fantom",
+      "chainId": 1,
+      "symbol": "FTM",
+      "decimals": 18,
+      "address": "0x4E15361FD6b4BB609Fa63C81A2be19d873717870",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ftm.svg"
+    },
+    {
+      "name": "Alchemix",
+      "chainId": 1,
+      "symbol": "ALCX",
+      "decimals": 18,
+      "address": "0xdBdb4d16EdA451D0503b854CF79D55697F90c8DF",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/alcx.svg"
+    },
+    {
+      "name": "Cryptex Finance",
+      "chainId": 1,
+      "symbol": "CTX",
+      "decimals": 18,
+      "address": "0x321C2fE4446C7c963dc41Dd58879AF648838f98D",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ctx.svg"
+    },
+    {
+      "name": "API3",
+      "chainId": 1,
+      "symbol": "API3",
+      "decimals": 18,
+      "address": "0x0b38210ea11411557c13457D4dA7dC6ea731B88a",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/api3.svg"
+    },
+    {
+      "name": "Wrapped Filecoin",
+      "chainId": 1,
+      "symbol": "EFIL",
+      "decimals": 18,
+      "address": "0x4B7ee45f30767F36f06F79B32BF1FCa6f726DEda",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/efil.svg"
+    },
+    {
+      "name": "Smooth Love Potion",
+      "chainId": 1,
+      "symbol": "SLP",
+      "decimals": 0,
+      "address": "0xCC8Fa225D80b9c7D42F96e9570156c65D6cAAa25",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/slp.svg"
+    },
+    {
+      "name": "Axie Infinity",
+      "chainId": 1,
+      "symbol": "AXS",
+      "decimals": 0,
+      "address": "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/axs.svg"
+    },
+    {
+      "name": "Moss Carbon Credit",
+      "chainId": 1,
+      "symbol": "MCO2",
+      "decimals": 18,
+      "address": "0xfC98e825A2264D890F9a1e68ed50E1526abCcacD",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/mco2.svg"
+    },
+    {
+      "name": "Wrapped Centrifuge",
+      "chainId": 1,
+      "symbol": "wCFG",
+      "decimals": 18,
+      "address": "0xc221b7E65FfC80DE234bbB6667aBDd46593D34F0",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/wcfg.svg"
+    },
+    {
+      "name": "Audius",
+      "chainId": 1,
+      "symbol": "AUDIO",
+      "decimals": 0,
+      "address": "0x18aAA7115705e8be94bfFEBDE57Af9BFc265B998",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/audio.svg"
+    },
+    {
+      "name": "Quant",
+      "chainId": 1,
+      "symbol": "QNT",
+      "decimals": 18,
+      "address": "0x4a220E6096B25EADb88358cb44068A3248254675",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/qnt.svg"
+    },
+    {
+      "name": "Mask Network",
+      "chainId": 1,
+      "symbol": "MASK",
+      "decimals": 18,
+      "address": "0x69af81e73A73B40adF4f3d4223Cd9b1ECE623074",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/mask.svg"
+    },
+    {
+      "name": "Radicle",
+      "chainId": 1,
+      "symbol": "RAD",
+      "decimals": 18,
+      "address": "0x31c8EAcBFFdD875c74b94b077895Bd78CF1E64A3",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/rad.svg"
+    },
+    {
+      "name": "Fetch.ai",
+      "chainId": 1,
+      "symbol": "FET",
+      "decimals": 18,
+      "address": "0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/fet.svg"
+    },
+    {
+      "name": "Shiba Inu",
+      "chainId": 1,
+      "symbol": "SHIB",
+      "decimals": 18,
+      "address": "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/shib.svg"
+    },
+    {
+      "name": "Numeraire",
+      "chainId": 1,
+      "symbol": "NMR",
+      "decimals": 18,
+      "address": "0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/nmr.svg"
+    },
+    {
+      "name": "Spell Token",
+      "chainId": 1,
+      "symbol": "SPELL",
+      "decimals": 18,
+      "address": "0x090185f2135308BaD17527004364eBcC2D37e5F6",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/spell.svg"
+    },
+    {
+      "name": "Magic Internet Money",
+      "chainId": 1,
+      "symbol": "MIM",
+      "decimals": 18,
+      "address": "0x99D8a9C45b2ecA8864373A26D1459e3Dff1e17F3",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/mim.svg"
+    },
+    {
+      "name": "Render Token",
+      "chainId": 1,
+      "symbol": "RNDR",
+      "decimals": 18,
+      "address": "0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/rndr.svg"
+    },
+    {
+      "name": "Gala",
+      "chainId": 1,
+      "symbol": "GALA",
+      "decimals": 8,
+      "address": "0x15D4c048F83bd7e37d49eA4C83a07267Ec4203dA",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/gala.svg"
+    },
+    {
+      "name": "Merit Circle",
+      "chainId": 1,
+      "symbol": "MC",
+      "decimals": 18,
+      "address": "0x949D48EcA67b17269629c7194F4b727d4Ef9E5d6",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/mc.svg"
+    },
+    {
+      "name": "Ethereum Name Service",
+      "chainId": 1,
+      "symbol": "ENS",
+      "decimals": 18,
+      "address": "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ens.svg"
+    },
+    {
+      "name": "Keep3rV1",
+      "chainId": 1,
+      "symbol": "KP3R",
+      "decimals": 18,
+      "address": "0x1cEB5cB57C4D4E2b2433641b95Dd330A33185A44",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/kp3r.svg"
+    },
+    {
+      "name": "Dogelon Mars",
+      "chainId": 1,
+      "symbol": "ELON",
+      "decimals": 18,
+      "address": "0x761D38e5ddf6ccf6Cf7c55759d5210750B5D60F3",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/elon.svg"
+    },
+    {
+      "name": "Civic",
+      "chainId": 1,
+      "symbol": "CVC",
+      "decimals": 8,
+      "address": "0x41e5560054824eA6B0732E656E3Ad64E20e94E45",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/cvc.svg"
+    },
+    {
+      "name": "Tokemak",
+      "chainId": 1,
+      "symbol": "TOKE",
+      "decimals": 18,
+      "address": "0x2e9d63788249371f1DFC918a52f8d799F4a38C94",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/toke.svg"
+    },
+    {
+      "name": "Lido DAO",
+      "chainId": 1,
+      "symbol": "LDO",
+      "decimals": 18,
+      "address": "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ldo.svg"
+    },
+    {
+      "name": "Rally",
+      "chainId": 1,
+      "symbol": "RLY",
+      "decimals": 18,
+      "address": "0xf1f955016EcbCd7321c7266BccFB96c68ea5E49b",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/rly.svg"
+    },
+    {
+      "name": "ApeCoin",
+      "chainId": 1,
+      "symbol": "APE",
+      "decimals": 18,
+      "address": "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ape.svg"
+    },
+    {
+      "name": "Liquity",
+      "chainId": 1,
+      "symbol": "LQTY",
+      "decimals": 18,
+      "address": "0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/lqty.svg"
+    },
+    {
+      "name": "Liquity USD",
+      "chainId": 1,
+      "symbol": "LUSD",
+      "decimals": 18,
+      "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/lusd.svg"
+    },
+    {
+      "name": "Maple Finance",
+      "chainId": 1,
+      "symbol": "MPL",
+      "decimals": 18,
+      "address": "0x33349B282065b0284d756F0577FB39c158F935e6",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/mpl.svg"
+    },
+    {
+      "name": "Ribbon Finance",
+      "chainId": 1,
+      "symbol": "RBN",
+      "decimals": 18,
+      "address": "0x6123B0049F904d730dB3C36a31167D9d4121fA6B",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/rbn.svg"
+    },
+    {
+      "name": "DeFi Pulse Index",
+      "chainId": 1,
+      "symbol": "DPI",
+      "decimals": 18,
+      "address": "0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/dpi.svg"
+    },
+    {
+      "name": "Index Cooperative",
+      "chainId": 1,
+      "symbol": "INDEX",
+      "decimals": 18,
+      "address": "0x0954906da0Bf32d5479e25f46056d22f08464cab",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/index.svg"
+    },
+    {
+      "name": "Chiliz",
+      "chainId": 1,
+      "symbol": "CHZ",
+      "decimals": 18,
+      "address": "0x3506424F91fD33084466F402d5D97f05F8e3b4AF",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/chz.svg"
+    },
+    {
+      "name": "Metis",
+      "chainId": 1,
+      "symbol": "METIS",
+      "decimals": 18,
+      "address": "0x9E32b13ce7f2E80A01932B42553652E053D6ed8e",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/metis.svg"
+    },
+    {
+      "name": "Qredo",
+      "chainId": 1,
+      "symbol": "QRDO",
+      "decimals": 8,
+      "address": "0x4123a133ae3c521FD134D7b13A2dEC35b56c2463",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/qrdo.svg"
+    },
+    {
+      "name": "Revv",
+      "chainId": 1,
+      "symbol": "REVV",
+      "decimals": 18,
+      "address": "0x557B933a7C2c45672B610F8954A3deB39a51A8Ca",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/revv.svg"
+    },
+    {
+      "name": "Geojam",
+      "chainId": 1,
+      "symbol": "JAM",
+      "decimals": 18,
+      "address": "0x23894DC9da6c94ECb439911cAF7d337746575A72",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/jam.svg"
+    },
+    {
+      "name": "Goldfinch",
+      "chainId": 1,
+      "symbol": "GFI",
+      "decimals": 18,
+      "address": "0xdab396cCF3d84Cf2D07C4454e10C8A6F5b008D2b",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/gfi.svg"
+    },
+    {
+      "name": "TrueFi",
+      "chainId": 1,
+      "symbol": "TRU",
+      "decimals": 8,
+      "address": "0x4C19596f5aAfF459fA38B0f7eD92F11AE6543784",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/tru.svg"
+    },
+    {
+      "name": "Alethea Artificial Liquid Intelligence",
+      "chainId": 1,
+      "symbol": "ALI",
+      "decimals": 8,
+      "address": "0x6B0b3a982b4634aC68dD83a4DBF02311cE324181",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ali.svg"
+    },
+    {
+      "name": "Ethernity",
+      "chainId": 1,
+      "symbol": "ERN",
+      "decimals": 18,
+      "address": "0xBBc2AE13b23d715c30720F079fcd9B4a74093505",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/ern.svg"
+    },
+    {
+      "name": "Euler Finance",
+      "chainId": 1,
+      "symbol": "EUL",
+      "decimals": 18,
+      "address": "0xd9Fcd98c322942075A5C3860693e9f4f03AAE07b",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/eul.svg"
+    },
+    {
+      "name": "Project Galaxy",
+      "chainId": 1,
+      "symbol": "GAL",
+      "decimals": 18,
+      "address": "0x5fAa989Af96Af85384b8a938c2EdE4A7378D9875",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/gal.svg"
+    },
+    {
+      "name": "Biconomy",
+      "chainId": 1,
+      "symbol": "BICO",
+      "decimals": 18,
+      "address": "0xF17e65822b568B3903685a7c9F496CF7656Cc6C2",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/bico.svg"
+    },
+    {
+      "name": "Immutable X",
+      "chainId": 1,
+      "symbol": "IMX",
+      "decimals": 18,
+      "address": "0xF57e7e7C23978C3cAEC3C3548E3D615c346e79fF",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/imx.svg"
+    },
+    {
+      "name": "IoTeX",
+      "chainId": 1,
+      "symbol": "IOTX",
+      "decimals": 18,
+      "address": "0x6fB3e0A217407EFFf7Ca062D46c26E5d60a14d69",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/iotx.svg"
+    },
+    {
+      "name": "PlayDapp",
+      "chainId": 1,
+      "symbol": "PLA",
+      "decimals": 18,
+      "address": "0x3a4f40631a4f906c2BaD353Ed06De7A5D3fCb430",
+      "logoURI": "https://gemini.com/images/currencies/icons/default/pla.svg"
+    }
+  ]
+}
