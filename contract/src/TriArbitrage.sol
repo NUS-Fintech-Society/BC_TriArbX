@@ -7,16 +7,6 @@ import "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract TriArbitrage is Ownable {
-    uint256 public number;
-
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
-
-    function increment() public {
-        number++;
-    }
-
     ISwapRouter public immutable swapRouter;
 
     // Swap router can be found here: https://docs.uniswap.org/contracts/v3/reference/deployments
@@ -38,7 +28,7 @@ contract TriArbitrage is Ownable {
         address tokenB,
         address tokenC,
         uint256 amountIn,
-        uint256 poolFee
+        uint24 poolFee
     ) external returns (uint256 amountOut) {
         // Checks if caller has sufficient amount
         require(msg.sender.balance >= amountIn, "Insufficient funds");
