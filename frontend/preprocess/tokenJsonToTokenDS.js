@@ -8008,17 +8008,22 @@ const tokenList = [
 let tokenDS = {};
 
 for (const token of tokenList) {
+  // only keep tokens on mainnet address
+  if (token.chainId !== 1) {
+    continue;
+  }
   if (!(token.symbol in tokenDS)) {
     tokenDS[token.symbol] = {};
     tokenDS[token.symbol]["name"] = token.name;
     tokenDS[token.symbol]["symbol"] = token.symbol;
+    tokenDS[token.symbol]["address"] = token.address;
   }
-
-  if (!("address" in tokenDS[token.symbol])) {
-    tokenDS[token.symbol]["address"] = [token.address];
-  } else {
-    const currAddress = tokenDS[token.symbol]["address"];
-    currAddress.push(token.address);
-  }
+  // if (!("address" in tokenDS[token.symbol])) {
+  //   tokenDS[token.symbol]["address"] = token.address;
+  // }
+  // else {
+  //   const currAddress = tokenDS[token.symbol]["address"];
+  //   currAddress.push(token.address);
+  // }
 }
 console.log(tokenDS);
