@@ -254,11 +254,9 @@ export const getTriangleData = async (
  */
 export const getPoolFee = (tokenA: string, tokenB: string): string => {
 	const fees = Object.keys(poolAddressDS[tokenA][tokenB]);
-	const fee = fees.filter((fee) => parseInt(fee) >= 10_000); // checks if there is >= 3 percent]
+	const fee = poolAddressDS[tokenA][tokenB][fees[fees.length - 1]]; // checks if there is >= 3 percent]
 
-	if (fee.length) return fee[0];
-
-	return fees[0];
+	return fee;
 };
 
 /**
