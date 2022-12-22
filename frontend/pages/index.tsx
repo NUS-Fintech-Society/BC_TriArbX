@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { getTriangleRate } from "../utils/uniswap";
-import { triangleSampleDS } from "../utils/uniswap/store/triangleSampleDS";
+import { triangleDS } from "../utils/uniswap/store/triangleDS";
 
 export default function Home() {
 	const [arbitrageRate, setArbitrageRate] = useState({});
@@ -14,7 +14,7 @@ export default function Home() {
 		 * ethereum tokenA => tokenB => tokenC
 		 */
 
-		for (const path of triangleSampleDS) {
+		for (const path of triangleDS) {
 			try {
 				arbitrageRate[path.toString()] = await getTriangleRate(ethereum, path);
 

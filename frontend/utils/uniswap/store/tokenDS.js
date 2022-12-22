@@ -1,4 +1,4 @@
-export const tokenDS = {
+const tokenDS = {
   "1INCH": {
     name: "1inch",
     symbol: "1INCH",
@@ -1166,4 +1166,5 @@ export const tokenDS = {
   },
 };
 
+exports.tokenDS = tokenDS;
 // 233 tokens
