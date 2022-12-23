@@ -26,15 +26,15 @@ export const getTriangleRate = async (
 	// 1. Get token details
 	const tokenDetailA: TokenDetail = await getTokenDetail(
 		tokenPath[0],
-		ethereum
+		provider
 	);
 	const tokenDetailB: TokenDetail = await getTokenDetail(
 		tokenPath[1],
-		ethereum
+		provider
 	);
 	const tokenDetailC: TokenDetail = await getTokenDetail(
 		tokenPath[2],
-		ethereum
+		provider
 	);
 	// console.log("Token Details:", tokenDetailA, tokenDetailB, tokenDetailC);
 
@@ -53,17 +53,17 @@ export const getTriangleRate = async (
 	);
 
 	// 3. Get pool contract. contractPool[]
-	const poolContractAB: ethers.Contract = new ethers.Contract(
+	const poolContractAB: Contract = new Contract(
 		poolAddressAB,
 		IUniswapV3PoolABI,
 		provider
 	);
-	const poolContractBC: ethers.Contract = new ethers.Contract(
+	const poolContractBC: Contract = new Contract(
 		poolAddressBC,
 		IUniswapV3PoolABI,
 		provider
 	);
-	const poolContractCA: ethers.Contract = new ethers.Contract(
+	const poolContractCA: Contract = new Contract(
 		poolAddressCA,
 		IUniswapV3PoolABI,
 		provider
@@ -121,28 +121,28 @@ export const getTriangleRate = async (
 
 	const arbitrageRate = rateAB * rateBC * rateCA;
 
-	// console.log(`
-	// 	Pool rates:\n
-	// 	${tokenAB[0].symbol} - ${tokenAB[1].symbol} Swap fee ${poolAB.fee / 10_000}%:\n
-	// 	1 ${tokenAB[0].symbol} = ${abA} ${tokenAB[1].symbol}\n
-	// 	1 ${tokenAB[1].symbol} = ${abB} ${tokenAB[0].symbol}\n
+	console.log(`
+		Pool rates:\n
+		${tokenAB[0].symbol} - ${tokenAB[1].symbol} Swap fee ${poolAB.fee / 10_000}%:\n
+		1 ${tokenAB[0].symbol} = ${abA} ${tokenAB[1].symbol}\n
+		1 ${tokenAB[1].symbol} = ${abB} ${tokenAB[0].symbol}\n
 
-	// 	${tokenBC[0].symbol} - ${tokenBC[1].symbol} Swap fee ${poolBC.fee / 10_000}%:\n
-	// 	1 ${tokenBC[0].symbol} = ${bcB} ${tokenBC[1].symbol}\n
-	// 	1 ${tokenBC[1].symbol} = ${bcC} ${tokenBC[0].symbol}\n
+		${tokenBC[0].symbol} - ${tokenBC[1].symbol} Swap fee ${poolBC.fee / 10_000}%:\n
+		1 ${tokenBC[0].symbol} = ${bcB} ${tokenBC[1].symbol}\n
+		1 ${tokenBC[1].symbol} = ${bcC} ${tokenBC[0].symbol}\n
 
-	// 	${tokenCA[0].symbol} - ${tokenCA[1].symbol} Swap fee ${poolCA.fee / 10_000}%:\n
-	// 	1 ${tokenCA[0].symbol} = ${caC} ${tokenCA[1].symbol}\n
-	// 	1 ${tokenCA[1].symbol} = ${caA} ${tokenCA[0].symbol}\n
+		${tokenCA[0].symbol} - ${tokenCA[1].symbol} Swap fee ${poolCA.fee / 10_000}%:\n
+		1 ${tokenCA[0].symbol} = ${caC} ${tokenCA[1].symbol}\n
+		1 ${tokenCA[1].symbol} = ${caA} ${tokenCA[0].symbol}\n
 
-	// 	Triangle Arbitrage rate = ${triangleArbitrageRate}
-	// `);
+		Triangle Arbitrage rate = ${arbitrageRate}
+	`);
 
 	return {
 		aTob: rateAB,
 		bToc: rateBC,
 		cToA: rateCA,
-		arbitrageRate: rateAB * rateBC * rateCA,
+		arbitrageRate: arbitrageRate,
 	};
 };
 
@@ -188,6 +188,7 @@ export const createTokens = async (
 		tokenDetailB.name
 	);
 
+	// This ensures that the token order is correct
 	return immutables.token0 === tokenDetailA.address
 		? [tokenA, tokenB]
 		: [tokenB, tokenA];
@@ -223,7 +224,7 @@ export const getTokenRateFromPool = (pool: Pool): number[] => {
  * @returns
  */
 export const getTriangleData = async (
-	poolContracts: ethers.Contract[]
+	poolContracts: Contract[]
 ): Promise<[Immutables, State][]> => {
 	const [poolContractAB, poolContractBC, poolContractCA] = poolContracts;
 	const [immutablesAB, stateAB]: [Immutables, State] = await Promise.all([
@@ -254,8 +255,7 @@ export const getTriangleData = async (
  */
 export const getPoolFee = (tokenA: string, tokenB: string): string => {
 	const fees = Object.keys(poolAddressDS[tokenA][tokenB]);
-	const fee = poolAddressDS[tokenA][tokenB][fees[fees.length - 1]]; // checks if there is >= 3 percent]
-
+	const fee = fees[fees.length - 1];
 	return fee;
 };
 
@@ -287,11 +287,8 @@ export const getPoolAddress = (tokenA: string, tokenB: string): string => {
  */
 const getTokenDetail = async (
 	tokenSymbol: string,
-	ethereum:
-		| ethers.providers.ExternalProvider
-		| ethers.providers.JsonRpcFetchFunc
+	provider: ethers.providers.Web3Provider
 ): Promise<TokenDetail> => {
-	const provider = await getProvider(ethereum);
 	const tokenDetail = tokenDS[tokenSymbol.toUpperCase()];
 	const contract = new Contract(tokenDetail.address, ERC20.abi, provider);
 	const chainId = (await provider.getNetwork()).chainId;
@@ -305,7 +302,7 @@ const getTokenDetail = async (
  * @param poolContract
  * @returns
  */
-const getPoolState = async (poolContract: ethers.Contract) => {
+const getPoolState = async (poolContract: Contract) => {
 	const [liquidity, slot] = await Promise.all([
 		poolContract.liquidity(),
 		poolContract.slot0(),
@@ -331,7 +328,7 @@ const getPoolState = async (poolContract: ethers.Contract) => {
  * @param poolContract
  * @returns
  */
-const getPoolImmutables = async (poolContract: ethers.Contract) => {
+const getPoolImmutables = async (poolContract: Contract) => {
 	const PoolImmutables: Immutables = {
 		factory: await poolContract.factory(),
 		token0: await poolContract.token0(),

@@ -44,8 +44,11 @@ export default function Home() {
 								arbitrageRate[pathY].arbitrageRate -
 								arbitrageRate[pathX].arbitrageRate
 						)
-						.map((path) => (
-							<div className="flex flex-col items-center justify-center border h-56 w-52 rounded-lg p-4">
+						.map((path, index) => (
+							<div
+								key={index}
+								className="flex flex-col items-center justify-center border h-56 w-52 rounded-lg p-4"
+							>
 								<span>{path}</span>
 								<span>{`1 ${path.split(",")[0]} = ${arbitrageRate[
 									path
