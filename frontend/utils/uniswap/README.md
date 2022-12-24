@@ -105,7 +105,7 @@ getTriangleRate(window.ethereum, ["AAVE", "COMP", "WETH"]);
    const provider = await getProvider(ethereum);
    ```
 
-2. We get the token details of 3 tokens from the user input so that we can have a standardised information to proess later.
+2. We get the token details of 3 tokens from the user input so that we can have a standardised information to process later.
 
    ```typescript
    // Function
@@ -406,6 +406,6 @@ const getTriangleRate = async (
 
 ## Obstacles faced.
 
-1. Uniswap documentation does seem complete and is not exactly very useful. An example was the [fetching of spot prices](https://docs.uniswap.org/sdk/v3/guides/fetching-prices). In the documentation, we were told to use a getter method `token0Price` and `token1Price` to get the prices of the swap but the data returned was a `Price` object and no instruction was given on how to retrieve the price. We had to do some searching on [stackoverflow](https://ethereum.stackexchange.com/questions/127486/uniswap-v3-fetching-spot-prices-documentation-seems-incomplete?rq=1) to be show how prices are derieved from the methods.
+1. Uniswap documentation doesn't seem complete and is not exactly very useful. An example was the [fetching of spot prices](https://docs.uniswap.org/sdk/v3/guides/fetching-prices). In the documentation, we were told to use a getter method `token0Price` and `token1Price` to get the prices of the swap but the data returned was a `Price` object and no instruction was given on how to retrieve the price. We had to do some searching on [stackoverflow](https://ethereum.stackexchange.com/questions/127486/uniswap-v3-fetching-spot-prices-documentation-seems-incomplete?rq=1) to be show how prices are derieved from the methods.
 2. Another issue faced that has not been resolve is the price derieved from `token0Price` and `token1Price`. Some of the swap rate given was more or less the same when compared to [Uniswap's swapping tool](https://app.uniswap.org/#/swap). However, some were inaccurate such as the swap rate of COMP and DAI was returned as 1 from the `getTriangleRate` but on Uniswap 1 COMP = 33.4112 DAI.
    </br></br>##TODO This issue has not been resolved.
