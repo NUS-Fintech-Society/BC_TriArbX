@@ -14,7 +14,7 @@ address constant USDC = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
 address constant WETH9 = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
 
 // For this example, we will set the pool fee to 0.3%.
-uint24 constant poolFee = 3000;
+//uint24 constant poolFee = 3000;
 
 // https://docs.uniswap.org/contracts/v3/reference/deployments
 address constant SWAP_ROUTER_ADDRESS = 0xE592427A0AEce92De3Edee1F18E0157C05861564;
@@ -34,8 +34,8 @@ contract TriArbitrageTest is Test {
 
         // necessary to approve deployed contract to spend DAI
         TransferHelper.safeApprove(DAI, address(triArbitrage), 1 ether);
-
-        uint256 amountOut = triArbitrage.executeTriangularArbitrage(
+        
+        triArbitrage.executeTriangularArbitrage(
             DAI,
             USDC,
             WETH9,
@@ -43,7 +43,6 @@ contract TriArbitrageTest is Test {
             3000
         );
 
-        console.log(amountOut);
         console.log("testExecuteSwap completed.");
     }
 }

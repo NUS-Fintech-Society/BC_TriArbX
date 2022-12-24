@@ -1,17 +1,19 @@
 # Smart Contract for Executing Swaps
 
-(Within the Contract folder)
+Within `/contract`,
 
 ## To Set Up
+- After downloading foundry,
 ```bash
 forge install
 forge build
 ```
 
-## To Test (Mainnet)
+## To Test
+- For Mainnet Infura
 - Duplicate dev.env to .env file within the Contract folder
-- add MAINNET_API_KEY from Alchemy app 
+- add keys from infura app 
 
 ```bash
-forge test --fork-url mainnet
+forge test --fork-url mainnet-infura
 ```

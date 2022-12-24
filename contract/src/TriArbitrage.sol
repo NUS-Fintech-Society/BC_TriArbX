@@ -66,7 +66,7 @@ contract TriArbitrage is Ownable {
         amountOut = swapRouter.exactInput(params);
 
         // Checks if swap is profitable
-        require(amountOut >= amountIn, "Swap would have incurred losses");
+        //require(amountOut >= amountIn, "Swap would have incurred losses");
 
         return amountOut;
     }
