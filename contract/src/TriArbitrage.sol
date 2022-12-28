@@ -16,45 +16,52 @@ contract TriArbitrage is Ownable {
 
     /*
      * Function executes triangular arbitrage
-     * @params tokenA
-     * @params tokenB
-     * @params tokenC
+     * @dev The calling address must approve this contract to spend at least `amountIn` worth of its tokenA for this function to succeed.
+     * @params array of tokenA / tokenB / tokenC
+     * @params array of poolFees of pool AB / BC / CA. The fee for the a pool in hundredths of basis points. E.g. 3000 = 0.3% fee
      * @params amountIn The amount that caller want to use
-     * @params poolFee The fee for the a pool in hundredths of basis points. E.g. 3000 = 0.3% fee
      * @returns the output amount
      */
     function executeTriangularArbitrage(
-        address tokenA,
-        address tokenB,
-        address tokenC,
-        uint256 amountIn,
-        uint24 poolFee
+        address[3] memory tokens,
+        uint24[3] memory poolFees,
+        uint256 amountIn
     ) external returns (uint256 amountOut) {
-        // Checks if caller has sufficient amount
-        require(msg.sender.balance >= amountIn, "Insufficient funds");
+        // Checks input parameters
+        require(
+            tokens.length == 3 && poolFees.length == 3,
+            "Invalid length of tokens / pool fees."
+        );
+        require(amountIn > 0, "Invalid amount in.");
+
+        // Check sender tokenA balance
+        require(
+            IERC20(tokens[0]).balanceOf(msg.sender) >= amountIn,
+            "Insufficient funds available."
+        );
 
         // Transfer `amountIn` of tokenA to this contract.
         TransferHelper.safeTransferFrom(
-            tokenA,
+            tokens[0],
             msg.sender,
             address(this),
             amountIn
         );
 
         // Approve the router to spend tokenA.
-        TransferHelper.safeApprove(tokenA, address(swapRouter), amountIn);
+        TransferHelper.safeApprove(tokens[0], address(swapRouter), amountIn);
 
         // tokenA => tokenB => tokenC => tokenA
         ISwapRouter.ExactInputParams memory params = ISwapRouter
             .ExactInputParams({
                 path: abi.encodePacked(
-                    tokenA,
-                    poolFee,
-                    tokenB,
-                    poolFee,
-                    tokenC,
-                    poolFee,
-                    tokenA
+                    tokens[0],
+                    poolFees[0],
+                    tokens[1],
+                    poolFees[1],
+                    tokens[2],
+                    poolFees[2],
+                    tokens[0]
                 ),
                 recipient: msg.sender,
                 deadline: block.timestamp,
@@ -65,8 +72,8 @@ contract TriArbitrage is Ownable {
         // Executes the swap.
         amountOut = swapRouter.exactInput(params);
 
-        // Checks if swap is profitable
-        //require(amountOut >= amountIn, "Swap would have incurred losses");
+        // Checks if swap is profitable.
+        require(amountOut >= amountIn, "Swap would have incurred losses.");
 
         return amountOut;
     }
