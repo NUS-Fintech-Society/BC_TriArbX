@@ -1,11 +1,12 @@
 [profile.default]
 src = 'src'
 out = 'out'
-libs = ['lib']
+libs = ['lib']  
 
 # aliases
 [rpc_endpoints]
-mainnet-infura = "https://mainnet.infura.io/v3/${MAINNET_INFURA_API_KEY}"
-mainnet-alchemy = "https://eth-mainnet.g.alchemy.com/v2/${MAINNET_ALCHEMY_API_KEY}"
+goerli-infura = "https://goerli.infura.io/v3/${INFURA_API_KEY}"
+mainnet-infura = "https://mainnet.infura.io/v3/${INFURA_API_KEY}"
+mainnet-alchemy = "https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}"
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config

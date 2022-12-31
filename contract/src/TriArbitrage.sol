@@ -10,8 +10,8 @@ contract TriArbitrage is Ownable {
     ISwapRouter public immutable swapRouter;
 
     // Swap router can be found here: https://docs.uniswap.org/contracts/v3/reference/deployments
-    constructor(ISwapRouter _swapRouter) {
-        swapRouter = _swapRouter;
+    constructor(address swapRouterAddress) {
+        swapRouter = ISwapRouter(swapRouterAddress);
     }
 
     /*
@@ -28,10 +28,6 @@ contract TriArbitrage is Ownable {
         uint256 amountIn
     ) external returns (uint256 amountOut) {
         // Checks input parameters
-        require(
-            tokens.length == 3 && poolFees.length == 3,
-            "Invalid length of tokens / pool fees."
-        );
         require(amountIn > 0, "Invalid amount in.");
 
         // Check sender tokenA balance
