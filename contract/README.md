@@ -4,7 +4,7 @@ In `/contract`,
 
 ## To Set Up
 
-- After downloading foundry,
+After downloading foundry,
 
 ```bash
 forge install
@@ -14,6 +14,7 @@ forge build
 ## Addresses
 
 Swap Router Address: 0xE592427A0AEce92De3Edee1F18E0157C05861564
+
 (Swap router can be found here: https://docs.uniswap.org/contracts/v3/reference/deployments)
 
 ## Function
@@ -36,6 +37,7 @@ function executeTriangularArbitrage(
 - Duplicate dev.env to .env file within the Contract folder.
 - Add infura keys.
 - Test case at `/lib/test/TriArbitrage.t.sol`
+- mainnet-infura is an alias declared in `foundry.toml`
 
 ```bash
 forge test --fork-url mainnet-infura
@@ -49,7 +51,7 @@ forge test --fork-url mainnet-infura
 - Add infura and wallet private keys.
 - Obtain faucet goerli ETH, swap with "amountIn" of token A on Uniswap.
 
-Check your token A balance
+(Check your token A balance)
 
 ```bash
 cast call <TOKEN_A_ADDRESS> "balanceOf(address)(uint256)" <YOUR_WALLET_ADDRESS>
@@ -64,12 +66,13 @@ forge create --private-key <PRIVATE_KEY> src/TriArbitrage.sol:TriArbitrage --con
 2. To approve deployed contract to spend "amountIn" of token A
 
 ```bash
-cast send 0xdc31Ee1784292379Fbb2964b3B9C4124D8F89C60 --private-key <PRIVATE_KEY> "approve(address,uint256)" <DEPLOYED_CONTRACT_ADDRESS> <AMOUNT_IN>
+cast send <TOKEN_A_ADDRESS> --private-key <PRIVATE_KEY> "approve(address,uint256)" <DEPLOYED_CONTRACT_ADDRESS> <AMOUNT_IN>
 ```
 
 3. Execute triangular swap function
-   (The transaction will only succeed if it is profitable.)
+
+Note: The transaction will only succeed if the pool exists, trade is profitable and have met the other requirements.
 
 ```bash
-cast send <DEPLOYED_CONTRACT_ADDRESS> --private-key <PRIVATE_KEY> "executeTriangularArbitrage(address[3],uint24[3],uint256)(uint256)" “[<TOKEN_A_ADDRESS>,<TOKEN_B_ADDRESS>,<TOKEN_C_ADDRESS>]” “[<POOL_FEE_AB>,<POOL_FEE_BC>,<POOL_FEE_CA>]” <AMOUNT_IN>
+cast send <DEPLOYED_CONTRACT_ADDRESS> --private-key <PRIVATE_KEY> "executeTriangularArbitrage(address[3],uint24[3],uint256)(uint256)" "[<TOKEN_A_ADDRESS>,<TOKEN_B_ADDRESS>,<TOKEN_C_ADDRESS>]" "[<POOL_FEE_AB>,<POOL_FEE_BC>,<POOL_FEE_CA>]" <AMOUNT_IN>
 ```
