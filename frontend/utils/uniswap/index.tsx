@@ -78,9 +78,21 @@ export const getTriangleRate = async (
 	] = await getTriangleData([poolContractAB, poolContractBC, poolContractCA]);
 
 	// 5. Create tokens
-	const tokenAB = await createTokens(immutablesAB, tokenDetailA, tokenDetailB);
-	const tokenBC = await createTokens(immutablesBC, tokenDetailB, tokenDetailC);
-	const tokenCA = await createTokens(immutablesCA, tokenDetailC, tokenDetailA);
+	const tokenAB = await createTokens(
+		immutablesAB,
+		tokenDetailA,
+		tokenDetailB
+	);
+	const tokenBC = await createTokens(
+		immutablesBC,
+		tokenDetailB,
+		tokenDetailC
+	);
+	const tokenCA = await createTokens(
+		immutablesCA,
+		tokenDetailC,
+		tokenDetailA
+	);
 	// console.log("Tokens:", tokenAB, tokenBC, tokenCA);
 
 	// 6. Create Pool
@@ -120,6 +132,9 @@ export const getTriangleRate = async (
 	const rateCA = poolCA.token0.address === tokenDetailC.address ? caC : caA;
 
 	const arbitrageRate = rateAB * rateBC * rateCA;
+
+	if (arbitrageRate > 10000)
+		throw new Error("Unrealistic rate of", arbitrageRate);
 
 	console.log(`
 		Pool rates:\n
@@ -211,8 +226,12 @@ const getDecimals = async (tokenDetail: TokenDetail) => {
  * @returns
  */
 export const getTokenRateFromPool = (pool: Pool): number[] => {
-	const token0SwapRate: number = parseFloat(pool.token0Price.toSignificant(6)); // Token 0 / Token 1
-	const token1SwapRate: number = parseFloat(pool.token1Price.toSignificant(6)); // Token 1 / Token 0
+	const token0SwapRate: number = parseFloat(
+		pool.token0Price.toSignificant(6)
+	); // Token 0 / Token 1
+	const token1SwapRate: number = parseFloat(
+		pool.token1Price.toSignificant(6)
+	); // Token 1 / Token 0
 
 	return [token0SwapRate, token1SwapRate];
 };
