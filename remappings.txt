@@ -1,0 +1,4 @@
+ds-test/=contract/lib/forge-std/lib/ds-test/src/
+forge-std/=contract/lib/forge-std/src/
+@uniswap/=contract/lib/
+@openzeppelin/=contract/lib/openzeppelin-contracts/
