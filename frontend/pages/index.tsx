@@ -8,7 +8,7 @@ import { triangleDS } from "../utils/uniswap/store/triangleDS";
 export default function Home() {
 	const [arbitrageRate, setArbitrageRate] = useState({});
 
-	const makeConnection = async (ethereum) => {
+	const makeConnection = async (ethereum: any) => {
 		/**
 		 * Get arbitrage
 		 * ethereum tokenA => tokenB => tokenC
